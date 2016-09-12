@@ -225,9 +225,7 @@ static void *kJNCircleScrollViewContentOffsetChange = &kJNCircleScrollViewConten
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    if (self.autoScroll) {
-        [self stopAutoScroll];
-    }
+    [self stopAutoScroll];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
