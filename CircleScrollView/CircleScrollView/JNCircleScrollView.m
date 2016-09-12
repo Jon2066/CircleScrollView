@@ -144,12 +144,6 @@ static void *kJNCircleScrollViewContentOffsetChange = &kJNCircleScrollViewConten
 
 #pragma mark - method -
 
-- (void)showPageControlInRect:(CGRect)rect
-{
-    self.pageControl.hidden = NO;
-    self.pageControl.frame = rect;
-}
-
 - (void)reloadData
 {
     [self stopAutoScroll];
