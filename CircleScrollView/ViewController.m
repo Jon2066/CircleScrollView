@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "JNCircleScrollView.h"
-@interface ViewController ()<CircleScrollViewDataSouce>
+@interface ViewController ()<JNCircleScrollViewDataSouce, JNCircleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet JNCircleScrollView *circleView;
 
 
@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.items = @[@"page0", @"page1", @"page2", @"page3", @"page4"];
     self.circleView.dataSource = self;
-    
+    self.circleView.delegate = self;
 //    [self resetPageControl];
     
 //    self.circleView.autoScroll = NO;
@@ -76,6 +76,11 @@
     label.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
     label.text = self.items[pageNumber];
     return label;
+}
+
+- (void)circleScrollViewDidDisplayView:(UIView *)view atPage:(NSInteger)pageNumber
+{
+    NSLog(@"displayPage:%ld", pageNumber);
 }
 
 @end

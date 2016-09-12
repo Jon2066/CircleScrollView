@@ -174,6 +174,11 @@ static void *kJNCircleScrollViewContentOffsetChange = &kJNCircleScrollViewConten
         [self reloadMiddleViewWithPage:0];
         [self reloadRightViewWithPaeg:1];
     }
+    
+    if ([self.delegate respondsToSelector:@selector(circleScrollViewDidDisplayView:atPage:)]) {
+        [self.delegate circleScrollViewDidDisplayView:self.itemViews[CSMiddle] atPage:self.currentPage];
+    }
+    
     if (self.autoScroll) {
         [self startAutoScroll];
     }
@@ -325,6 +330,10 @@ static void *kJNCircleScrollViewContentOffsetChange = &kJNCircleScrollViewConten
         [self.itemViews setObject:lView forKey:CSMiddle];
         [self.itemViews setObject:rView forKey:CSLeft];
 
+        if ([self.delegate respondsToSelector:@selector(circleScrollViewDidDisplayView:atPage:)]) {
+            [self.delegate circleScrollViewDidDisplayView:self.itemViews[CSMiddle] atPage:self.currentPage];
+        }
+        
         self.pageControl.currentPage = self.currentPage;
         [self reloadLeftViewWithPage:(self.currentPage - 1 > 0)?self.currentPage - 1 : self.pageCount - 1];
     }
@@ -349,6 +358,10 @@ static void *kJNCircleScrollViewContentOffsetChange = &kJNCircleScrollViewConten
         [self.itemViews setObject:mView forKey:CSLeft];
         [self.itemViews setObject:rView forKey:CSMiddle];
         [self.itemViews setObject:lView forKey:CSRight];
+        
+        if ([self.delegate respondsToSelector:@selector(circleScrollViewDidDisplayView:atPage:)]) {
+            [self.delegate circleScrollViewDidDisplayView:self.itemViews[CSMiddle] atPage:self.currentPage];
+        }
         
         self.pageControl.currentPage = self.currentPage;
         [self reloadRightViewWithPaeg:(self.currentPage + 1 <= self.pageCount - 1)?self.currentPage + 1 : 0];
