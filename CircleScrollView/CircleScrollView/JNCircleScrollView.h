@@ -1,9 +1,9 @@
 //
 //  CircleScrollView.h
-//  Dandanjia
+//  Jonathan
 //
 //  Created by Jonathan on 16/9/8.
-//  Copyright © 2016年 xiandanjia.com. All rights reserved.
+//  Copyright © 2016年 Jonathan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
