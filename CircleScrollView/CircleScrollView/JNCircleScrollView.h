@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol JNCircleScrollViewDataSouce <NSObject>
+@protocol JNCircleScrollViewDataSource <NSObject>
 
 - (UIView *)circleScrollViewShouldLoadView:(UIView *)view atPage:(NSInteger)pageNumber;
 - (NSInteger)numberOfPagesInCircleScrollView;
@@ -25,7 +25,7 @@
 
 @interface JNCircleScrollView : UIView
 
-@property (assign, nonatomic) id<JNCircleScrollViewDataSouce> dataSource;
+@property (assign, nonatomic) id<JNCircleScrollViewDataSource> dataSource;
 
 @property (assign, nonatomic) id<JNCircleScrollViewDelegate> delegate;
 
