@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "JNCircleScrollView.h"
-@interface ViewController ()<JNCircleScrollViewDataSouce, JNCircleScrollViewDelegate>
+@interface ViewController ()<JNCircleScrollViewDataSource, JNCircleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet JNCircleScrollView *circleView;
 
 
